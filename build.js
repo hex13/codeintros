@@ -7,6 +7,7 @@ const wrapInCodeBlock = (source, language) => '\n```' + language + '\n' + source
 
 const codeFile = process.argv[2];
 const templateFile = process.argv[3];
+const format = process.argv[4] || 'html';
 const snippets = parse(fs.readFileSync(codeFile, 'utf8'));
 const template = fs.readFileSync(templateFile, 'utf8');
 
@@ -16,7 +17,11 @@ const out = nunjucks.renderString(template, {
     )
 });
 
-console.log("<style>pre {color: white; background: #333; padding: 8px; border-radius: 8px}</style>")
-marked.parse(out, (err, html) => {
-    console.log(html);
-});
+if (format == 'html') {
+    console.log("<style>pre {color: white; background: #333; padding: 8px; border-radius: 8px}</style>")
+    marked.parse(out, (err, html) => {
+        console.log(html);
+    });
+} else if (format == 'markdown') {
+    console.log(out);
+}
