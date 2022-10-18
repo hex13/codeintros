@@ -1,0 +1,12 @@
+{
+  "name": "codeintros",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Łukasz Lityński",
+  "license": "MIT"
+}
