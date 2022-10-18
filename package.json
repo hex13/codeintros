@@ -8,5 +8,9 @@
     "test": "node test.js"
   },
   "author": "Łukasz Lityński",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^4.1.1",
+    "nunjucks": "^3.2.3"
+  }
 }
