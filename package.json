@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "build": "mkdir -p build; node build.js examples/example1.js examples/example1.md > build/index.html"
   },
   "author": "Łukasz Lityński",
   "license": "MIT",
